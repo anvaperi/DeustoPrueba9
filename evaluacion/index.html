@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Datos del vehículo</title>
+</head>
+
+<body>
+  <h1>¡Compramos su Vehículo!</h1>
+  <p>Por favor, introduzca los datos para la estimación del valor de su vehículo.</p>
+  <form>
+    <fieldset>
+      <legend>Datos de identificación y registro</legend>
+      <div>
+        <fieldset>
+          <div>
+            <legend>Tipo de vehículo:</legend>
+          </div>
+          <div>
+            <input type="radio" name="type" checked="true" id="car" value="car" />
+            <label for="car"> Coche</label><br />
+            <input type="radio" name="type" id="motorcycle" value="motorcycle" />
+            <label for="motorcycle"> Moto</label><br />
+            <input type="radio" name="type" id="lorry" value="lorry" />
+            <label for="lorry"> Camión</label><br />
+          </div>
+        </fieldset>
+      </div>
+      <div>
+        <label for="brand">Marca: </label>
+        <input type="text" name="brand" id="brand" required="true" />
+      </div>
+      <div>
+        <label for="color">Color: </label>
+        <input type="color" name="color" id="color" />
+      </div>
+      <div>
+        <label for="year">Año de fabricación: </label>
+        <input type="number" name="year" id="year" min="1920" max="2025" />
+      </div>
+      <div>
+        <label for="licensePlate">Matrícula: </label>
+        <input type="text" name="licensePlate" id="licensePlate" 
+        pattern="[0-9]{4}-[A-Z]{3}" placeholder="9999-ZZZ" /><br />
+      </div>
+    </fieldset>
+    <div>
+      <fieldset>
+        <legend>Datos de mantenimiento</legend>
+        <div>
+          <label for="kilometers">Kilometraje: </label>
+          <input type="number" name="kilometers" id="kilometers" min="0" 
+            max="999999" step="100" required="true" />
+        </div>
+        <div>
+          <input type="checkbox" name="hasBeenRevised" id="hasBeenRevised" />
+          <label for="hasBeenRevised"> Se ha revisado </label>
+        </div>
+        <div>
+          <label for="lastRevision">Última revisión: </label>
+          <input type="date" name="lastRevision" id="lastRevision" min="1920-01-01" 
+            max="2025-08-31" />
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+  <p id="valuation">Su vehículo vale: </p>
+</body>
+</html>
+

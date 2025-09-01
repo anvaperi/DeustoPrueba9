@@ -1,0 +1,281 @@
+fieldset fieldset legend {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: #44546A;
+}
+
+body {
+  background-color: #fAfAfA;
+  color: #44546A;
+  border: #44546A;
+  font-family: "Ubuntu", sans-serif;
+}
+
+form {
+  background-color: #44546A;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #4877c3;
+}
+form fieldset {
+  background-color: #fAfAfA;
+}
+form h1, form p {
+  text-align: center;
+}
+
+fieldset {
+  border: 1px solid #4877c3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  background-color: #fAfAfA;
+  font-weight: bold;
+  color: #4877c3;
+  padding: 0 0.5rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+form {
+  padding: 0;
+}
+form fieldset {
+  padding: 0 1em 0 1em;
+  margin: 1em;
+}
+form fieldset fieldset {
+  border-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+form fieldset fieldset div:first-child {
+  max-width: 5em;
+}
+form fieldset fieldset legend {
+  padding: 0;
+}
+form > fieldset > div,
+form > div > fieldset > div {
+  margin: 1em 0 1em 0;
+  min-width: 17em;
+}
+form > div > fieldset > div {
+  margin: 1em 0 1em 0;
+  min-width: 17em;
+}
+form > div:last-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* allow column to stretch */
+  justify-content: space-between;
+  align-items: center;
+}
+form > div:last-child > fieldset {
+  margin-top: 0;
+  flex: 0 0 auto; /* keep its natural height */
+}
+form > div:last-child > input[type=submit] {
+  flex: 1;
+  min-width: 18em;
+  width: inherit;
+  margin-bottom: 1.2em;
+}
+
+@media (min-width: 700px) {
+  form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  form > fieldset > div {
+    max-width: 17em;
+  }
+  form > div > fieldset > div {
+    max-width: 14em;
+  }
+  form > div:last-child > fieldset {
+    margin-top: 1em;
+  }
+}
+@keyframes flash-accent {
+  0% {
+    background-color: #fAfAfA;
+  }
+  50% {
+    background-color: #f9ff7e;
+  }
+  100% {
+    background-color: #fAfAfA;
+  }
+}
+input[type=radio],
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=radio] + label,
+input[type=checkbox] + label {
+  padding: 0.2em 0.5em;
+  margin: 0.2em 0;
+  border-radius: 9999px;
+  border: 0.15em solid #1A1A1A;
+  background-color: #d6dce5;
+  color: #222A35;
+  font-weight: 450;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transform: scale(1);
+}
+input[type=radio] + label:hover,
+input[type=checkbox] + label:hover {
+  transform: scaleX(1.1);
+}
+input[type=radio] + label:active,
+input[type=checkbox] + label:active {
+  border: 0.15em solid #AFB53B;
+  background-color: #AFB53B;
+  transform: scaleX(1);
+}
+input[type=radio] + label.activated,
+input[type=checkbox] + label.activated {
+  border: 0.15em solid #44546A;
+  background-color: #44546A;
+  color: #fAfAfA;
+}
+
+input[type=radio]:checked + label,
+input[type=checkbox]:checked + label {
+  background-color: #AFB53B;
+  border-color: #AFB53B;
+  color: #fAfAfA;
+  transform: scale(1);
+}
+
+input[type=submit] {
+  padding: 0.2em 0.5em;
+  margin: 0.2em 0;
+  border-radius: 9999px;
+  border: 0.15em solid #1A1A1A;
+  background-color: #d6dce5;
+  color: #222A35;
+  font-weight: 450;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  font-weight: 600;
+}
+input[type=submit]:hover {
+  transform: scaleX(1.1);
+}
+input[type=submit]:active {
+  border: 0.15em solid #AFB53B;
+  background-color: #AFB53B;
+  transform: scaleX(1);
+}
+input[type=submit].activated {
+  border: 0.15em solid #44546A;
+  background-color: #44546A;
+  color: #fAfAfA;
+}
+input[type=submit]:active {
+  background-color: #AFB53B;
+  border-color: #AFB53B;
+  transform: scale(1);
+}
+
+input[type=color] {
+  padding: 0;
+  margin: 0;
+  border-radius: 9999px;
+  border: 0.1em solid #1A1A1A;
+  background-color: #fAfAfA;
+  color: #222A35;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  padding: 0;
+  width: 2.5em;
+  height: 2.5em;
+}
+input[type=color]:hover {
+  animation: flash-accent 0.3s ease-in-out;
+}
+input[type=color]:active {
+  background-color: #f9ff7e;
+}
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0.15em;
+}
+input[type=color]::-webkit-color-swatch {
+  border: none;
+  border-radius: 9999px;
+}
+
+input[type=text],
+input[type=number],
+input[type=date] {
+  padding: 0;
+  margin: 0;
+  border-radius: 9999px;
+  border: 0.1em solid #1A1A1A;
+  background-color: #fAfAfA;
+  color: #222A35;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  transform: scale(1);
+}
+input[type=text]:hover,
+input[type=number]:hover,
+input[type=date]:hover {
+  animation: flash-accent 0.3s ease-in-out;
+}
+input[type=text]:active,
+input[type=number]:active,
+input[type=date]:active {
+  background-color: #f9ff7e;
+}
+
+::placeholder {
+  color: #44546A;
+  opacity: 0.7;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 0.5em;
+  margin-right: -0.5em;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=main.css.map */

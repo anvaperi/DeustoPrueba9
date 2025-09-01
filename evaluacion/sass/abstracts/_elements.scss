@@ -1,0 +1,70 @@
+// sass>abstracts>_elements.scss
+@use '../abstracts/colors';
+
+@mixin pseudobutton {
+  // Estado normal
+  padding: 0.2em 0.5em;
+  margin: .2em 0;
+  border-radius: 9999px;
+  border: 0.15em solid colors.$color-darkest;
+  background-color: colors.$color-brighter;
+  color: colors.$color-darker;
+  font-weight: 450;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  // Estado hover: Aumenta el ancho
+  &:hover {
+    transform: scaleX(1.1);
+  }
+
+  // Estado activo (durante el clic): Sin borde y con color de acento
+  &:active {
+    border: 0.15em solid colors.$color-accent;
+    background-color: colors.$color-accent;
+    transform: scaleX(1); // Vuelve al tamaño original durante el clic
+  }
+
+  // Estado activado (con una clase JavaScript)
+  &.activated {
+    border: 0.15em solid colors.$color-dark;
+    background-color: colors.$color-dark;
+    color: colors.$color-brightest;
+  }
+}
+
+@mixin field {
+  padding: 0;
+  margin: 0;
+  border-radius: 9999px;
+  border: 0.1em solid colors.$color-darkest;
+  background-color: colors.$color-brightest;
+  color: colors.$color-darker;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+
+  // Hover → run a one-time flash animation
+  &:hover {
+    animation: flash-accent 0.3s ease-in-out;
+  }
+
+  // Active → stick with accent color
+  &:active {
+    background-color: colors.$color-bright-accent;
+  }
+}
+
+// Define the flash animation
+@keyframes flash-accent {
+  0%   { background-color: colors.$color-brightest; }
+  50%  { background-color: colors.$color-bright-accent; }
+  100% { background-color: colors.$color-brightest; }
+}
+

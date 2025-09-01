@@ -1,0 +1,14 @@
+// sass>base>_typography.scss
+@use '../abstracts/colors';
+
+$font-family: 'Ubuntu', sans-serif;
+
+@mixin label-font {
+  font-family: $font-family;
+  font-weight: 400;
+  color: colors.$color-dark;
+}
+
+fieldset fieldset legend {
+  @include label-font;
+}

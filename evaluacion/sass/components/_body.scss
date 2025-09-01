@@ -1,0 +1,9 @@
+// sass>components>_body.scss
+@use '../abstracts/colors';
+@use '../base/typography';
+
+body {
+  @include colors.light-theme;
+  font-family: typography.$font-family;
+}
+

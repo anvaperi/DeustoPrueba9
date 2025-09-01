@@ -1,0 +1,15 @@
+// sass>abstracts>_colors.scss
+$color-accent: #AFB53B;
+$color-bright-accent: #f9ff7e;
+$color-darkest: #1A1A1A;
+$color-darker: #222A35;
+$color-dark: #44546A;
+$color-bright: #4877c3;
+$color-brighter: #d6dce5;
+$color-brightest: #fAfAfA;
+
+@mixin light-theme {
+  background-color: $color-brightest;
+  color: $color-dark;
+  border: $color-dark;
+}

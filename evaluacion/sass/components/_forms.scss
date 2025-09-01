@@ -1,0 +1,31 @@
+// sass>components>_forms.scss
+@use '../abstracts/colors';
+@use '../base/typography';
+
+form {
+  background-color: colors.$color-dark;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid colors.$color-bright;
+  fieldset {
+    background-color: colors.$color-brightest;
+  }
+
+  h1, p {
+    text-align: center;
+  }
+}
+
+fieldset {
+  border: 1px solid colors.$color-bright;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem; // Add spacing between fieldsets
+}
+
+legend {
+  background-color: colors.$color-brightest;
+  font-weight: bold;
+  color: colors.$color-bright;
+  padding: 0 0.5rem;
+}

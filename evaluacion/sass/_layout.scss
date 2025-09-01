@@ -1,0 +1,89 @@
+// sass>_layout.scss
+body {
+  // Use Flexbox for centering
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // Set minimum height to enable vertical centering
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem; // Add some padding for smaller screens
+}
+
+form {
+  padding: 0;
+ 
+  fieldset { 
+    padding: 0 1em 0 1em;
+    margin: 1em;
+
+    fieldset {
+      border-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      div:first-child{
+        max-width: 5em;
+      }
+      legend {
+        padding: 0;
+      }
+    }
+  }
+
+  > fieldset > div, 
+  > div > fieldset > div {
+    margin: 1em 0 1em 0;
+    min-width: 17em;
+  }
+  > div > fieldset > div {
+    margin: 1em 0 1em 0;
+    min-width: 17em;
+  }
+
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* allow column to stretch */
+    justify-content: space-between;
+    align-items: center;
+    
+    > fieldset {
+      margin-top: 0;
+      flex: 0 0 auto;       /* keep its natural height */
+    }
+    
+    > input[type="submit"] {
+      flex: 1;
+      min-width: 18em;
+      width: inherit;
+      margin-bottom: 1.2em;
+    }
+  }
+}
+
+
+// Media query para pantallas de 700px o más
+@media (min-width: 700px) {
+  form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    > fieldset > div {
+      max-width: 17em;
+    }
+    
+    > div > fieldset > div {
+      max-width: 14em;
+    }
+    > div:last-child > fieldset {
+      margin-top: 1em;
+    }
+  }
+}
