@@ -8,7 +8,7 @@
   <title>Datos del vehículo</title>
 </head>
 
-<body>
+<body onload="prepareForm()" onsubmit="submitVehicle()">
   <h1>¡Compramos su Vehículo!</h1>
   <p>Por favor, introduzca los datos para la estimación del valor de su vehículo.</p>
   <form>
@@ -31,7 +31,7 @@
       </div>
       <div>
         <label for="brand">Marca: </label>
-        <input type="text" name="brand" id="brand" required="true" />
+        <input type="text" name="brand" id="brand" />
       </div>
       <div>
         <label for="color">Color: </label>
@@ -39,11 +39,11 @@
       </div>
       <div>
         <label for="year">Año de fabricación: </label>
-        <input type="number" name="year" id="year" min="1920" max="2025" />
+        <input type="number" name="year" id="year" min="1920" max="2020" />
       </div>
       <div>
         <label for="licensePlate">Matrícula: </label>
-        <input type="text" name="licensePlate" id="licensePlate" 
+        <input type="text" name="licensePlate" id="licensePlate" size="10" onchange="checkLicensePlate()"
         pattern="[0-9]{4}-[A-Z]{3}" placeholder="9999-ZZZ" /><br />
       </div>
     </fieldset>
@@ -52,23 +52,23 @@
         <legend>Datos de mantenimiento</legend>
         <div>
           <label for="kilometers">Kilometraje: </label>
-          <input type="number" name="kilometers" id="kilometers" min="0" 
-            max="999999" step="100" required="true" />
+          <input type="number" name="kilometers" id="kilometers" value="0" 
+            min="0" max="999999" step="100" required="true" /><span> km</span>
         </div>
         <div>
-          <input type="checkbox" name="hasBeenRevised" id="hasBeenRevised" />
-          <label for="hasBeenRevised"> Se ha revisado </label>
+          <input type="checkbox" name="isRevised" id="isRevised" onClick="show_hide_revisionDate()" />
+          <label for="isRevised" id="isRevisedLabel"> Sin revisar </label>
         </div>
-        <div>
-          <label for="lastRevision">Última revisión: </label>
-          <input type="date" name="lastRevision" id="lastRevision" min="1920-01-01" 
+        <div id="revisionDateBlock" [hidden]="hideRevised()">
+          <label for="revisionDate">Última ITV: </label>
+          <input type="date" name="revisionDate" id="revisionDate" min="1920-01-01" 
             max="2025-08-31" />
         </div>
       </fieldset>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Enviar" />
     </div>
   </form>
-  <p id="valuation">Su vehículo vale: </p>
+  <script src="./js/app.js"></script>
 </body>
 </html>
 
